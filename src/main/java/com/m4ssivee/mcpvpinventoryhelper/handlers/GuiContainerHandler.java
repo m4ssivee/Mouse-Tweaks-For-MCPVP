@@ -39,7 +39,7 @@ public class GuiContainerHandler implements IGuiScreenHandler {
 
     @Override
     public Slot getSlotUnderMouse(double mouseX, double mouseY) {
-        return screenAccessor.mcpvpinvhelper$invokeFindSlot(mouseX, mouseY);
+        return screenAccessor.mcpvpinvhelper$invokeGetHoveredSlot(mouseX, mouseY);
     }
 
     @Override
