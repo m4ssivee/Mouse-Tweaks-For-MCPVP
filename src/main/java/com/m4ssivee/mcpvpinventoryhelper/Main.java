@@ -70,14 +70,14 @@ public class Main {
 
             handler = findHandler(openScreen);
             if (handler == null) {
-                Logger.DebugLog("No valid handler found; Inventory Helper is disabled.");
+                Logger.DebugLog("No valid handler found; Mouse Tweaks is disabled.");
             } else {
                 boolean disableForThisContainer = handler.isMouseTweaksDisabled();
                 disableWheelForThisContainer = handler.isWheelTweakDisabled();
 
                 Logger.DebugLog("Handler: "
                         + handler.getClass().getSimpleName()
-                        + "; Inventory Helper is "
+                        + "; Mouse Tweaks is "
                         + (disableForThisContainer ? "disabled" : "enabled")
                         + "; wheel tweak is "
                         + (disableWheelForThisContainer ? "disabled" : "enabled")

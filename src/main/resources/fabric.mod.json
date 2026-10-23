@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "mcpvp_inventory_helper",
   "version": "${version}",
-  "name": "MCPVP Inventory Helper",
-  "description": "Inventory mouse shortcuts for the MCPVP server. Based on Mouse Tweaks by Ivan Molodetskikh (YaLTeR).",
+  "name": "Mouse Tweaks For MCPVP",
+  "description": "A Mouse Tweaks variant made to work on the MCPVP server. Based on Mouse Tweaks by Ivan Molodetskikh (YaLTeR).",
   "authors": [
     "m4ssivee"
   ],

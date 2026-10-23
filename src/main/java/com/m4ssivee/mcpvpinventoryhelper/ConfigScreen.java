@@ -11,7 +11,7 @@ public class ConfigScreen extends Screen {
     private final Screen previous;
 
     public ConfigScreen(Screen previous) {
-        super(Component.literal("MCPVP Inventory Helper Options"));
+        super(Component.literal("Mouse Tweaks For MCPVP Options"));
         this.previous = previous;
     }
 
