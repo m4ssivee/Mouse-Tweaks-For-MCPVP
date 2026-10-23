@@ -1,13 +1,16 @@
-# Mouse Tweaks
+# Mouse Tweaks For MCPVP
 
-A mod that enhances inventory management by adding various functions to the mouse buttons.
+A Fabric mod that brings Mouse Tweaks-style inventory handling to the **MCPVP** server.
 
-# How to build
+## Credits
 
-`gradlew build`
+This mod is based on **[Mouse Tweaks](https://github.com/YaLTeR/MouseTweaks)** by **Ivan Molodetskikh (YaLTeR)**
+and its contributors (mezz, juliand665, panoskj, FabiClawZ, ErrorMikey), used under the BSD-3-Clause license.
+All credit for the original functionality goes to them. This is an independent, unofficial variant and is not
+affiliated with the original project. See `LICENSE`.
 
-# Compatibility
+## How to build
 
-Mouse Tweaks should work with everything based on `AbstractContainerScreen`. If your GUI isn't based
-on `AbstractContainerScreen`, or if you want to provide additional compatibility, take a look
-at `src/main/java/yalter/mousetweaks/api/`.
+```
+./gradlew build
+```

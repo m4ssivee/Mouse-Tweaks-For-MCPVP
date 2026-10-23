@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
-  "id": "mousetweaks",
+  "id": "mousetweaks_for_mcpvp",
   "version": "${version}",
-  "name": "Mouse Tweaks",
-  "description": "${modDescription}",
+  "name": "Mouse Tweaks For MCPVP",
+  "description": "A Mouse Tweaks variant made to work on the MCPVP server. Based on Mouse Tweaks by Ivan Molodetskikh (YaLTeR).",
   "authors": [
-    "Ivan Molodetskikh (YaLTeR)"
+    "m4ssivee"
   ],
   "contributors": [
+    "Ivan Molodetskikh (YaLTeR) - original Mouse Tweaks author",
     "mezz",
     "juliand665",
     "panoskj",
@@ -15,24 +16,24 @@
     "ErrorMikey"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/mouse-tweaks",
-    "issues": "https://github.com/YaLTeR/MouseTweaks/issues",
-    "sources": "https://github.com/YaLTeR/MouseTweaks"
+    "sources": "https://github.com/m4ssivee"
+  },
+  "custom": {
+    "credits": "Based on Mouse Tweaks by Ivan Molodetskikh (YaLTeR), BSD-3-Clause: https://github.com/YaLTeR/MouseTweaks"
   },
   "license": "BSD-3-Clause",
-  "icon": "mousetweaks_logo.png",
   "environment": "client",
   "entrypoints": {
     "client": [
-      "yalter.mousetweaks.fabric.MouseTweaksFabric"
+      "com.m4ssivee.mousetweaksmcpvp.fabric.MouseTweaksForMCPVPFabric"
     ],
     "modmenu": [
-      "yalter.mousetweaks.ModMenuApiImpl"
+      "com.m4ssivee.mousetweaksmcpvp.ModMenuApiImpl"
     ]
   },
   "mixins": [
-    "mousetweaks.mixins.json",
-    "mousetweaks-fabric.mixins.json"
+    "mousetweaks_mcpvp.mixins.json",
+    "mousetweaks_mcpvp-fabric.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${fabricLoaderVersion}",

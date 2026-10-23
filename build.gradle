@@ -1,120 +1,61 @@
-buildscript {
-    repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '[6.0,6.2)', changing: true
-        classpath 'org.spongepowered:mixingradle:0.7.+'
-    }
+plugins {
+    id 'fabric-loom' version '1.6-SNAPSHOT'
 }
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.spongepowered.mixin'
 
 version = project.modVersion
-group = "yalter.mousetweaks"
-base.archivesName = "MouseTweaks-forge-mc${project.forgeMcVersion}"
+group = "com.m4ssivee.mousetweaksmcpvp"
+archivesBaseName = "MouseTweaksForMCPVP-fabric-mc${project.fabricMcVersion}"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(project.modJavaVersion)
+
+repositories {
+    maven {
+        url "https://maven.terraformersmc.com/releases"
+    }
+}
 
 sourceSets {
     main {
         java {
-            exclude 'yalter/mousetweaks/fabric'
-            exclude 'yalter/mousetweaks/ModMenuApiImpl.java'
-            exclude 'yalter/mousetweaks/neoforge'
+            exclude 'com/m4ssivee/mousetweaksmcpvp/forge'
+            exclude 'com/m4ssivee/mousetweaksmcpvp/neoforge'
         }
 
         resources {
-            exclude 'fabric.mod.json'
+            exclude 'META-INF/mods.toml'
             exclude 'META-INF/neoforge.mods.toml'
         }
     }
 }
 
-mixin {
-    config 'mousetweaks.mixins.json'
+loom {
+    mixin.defaultRefmapName = 'mousetweaks_mcpvp.mixins.refmap.json'
 }
 
-minecraft {
-    mappings channel: 'official', version: project.forgeMcVersion
+dependencies {
+    minecraft "com.mojang:minecraft:${project.fabricMcVersion}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.fabricLoaderVersion}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabricApiVersion}"
 
-    reobf = false
-
-    runs {
-        client {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-
-            mods {
-                mousetweaks {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        server {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-
-            mods {
-                mousetweaks {
-                    source sourceSets.main
-                }
-            }
-        }
-    }
+    modImplementation "com.terraformersmc:modmenu:${project.fabricModMenuVersion}"
 }
 
 processResources {
-    inputs.property "version", project.modVersion
-    filesMatching("META-INF/mods.toml") {
+    inputs.property "version", project.version
+
+    filesMatching("fabric.mod.json") {
         expand([
                 "version": project.modVersion,
-                "forgeLoaderVersion": project.forgeLoaderVersion,
+                "modJavaVersion": project.modJavaVersion,
+                "fabricMcVersion": project.fabricMcVersion,
+                "fabricLoaderVersion": project.fabricLoaderVersion,
                 "modCredits": project.modCredits,
                 "modDescription": project.modDescription,
         ])
     }
 }
 
-dependencies {
-    minecraft "net.minecraftforge:forge:${project.forgeMcVersion}-${project.forgeVersion}"
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-}
-
-jar {
-    manifest.attributes([
-            "Specification-Title"     : "Mouse Tweaks",
-            "Specification-Vendor"    : "YaLTeR",
-            "Specification-Version"   : "${project.version}",
-            "Implementation-Title"    : project.name,
-            "Implementation-Version"  : "${project.version}",
-            "Implementation-Vendor"   : "YaLTeR",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-            "TweakClass"              : 'org.spongepowered.asm.launch.MixinTweaker',
-            "TweakOrder"              : 0,
-            "MixinConfigs"            : "mousetweaks.mixins.json"
-    ])
-}
-
-task srcJar(type: Jar) {
-    archiveClassifier.set("src")
-    from sourceSets.main.allJava
-}
-
-task apiJar(type: Jar) {
-    archiveClassifier.set("api")
-    from(sourceSets.main.output) {
-        include 'yalter/mousetweaks/api/**'
-    }
-}
-
-artifacts {
-    archives srcJar
-    archives apiJar
+java {
+    withSourcesJar()
 }
