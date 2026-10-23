@@ -38,7 +38,7 @@
   "depends": {
     "fabricloader": ">=${fabricLoaderVersion}",
     "fabric-api": "*",
-    "minecraft": "~${fabricMcVersion}",
+    "minecraft": "1.21",
     "java": ">=${modJavaVersion}"
   },
   "suggests": {}

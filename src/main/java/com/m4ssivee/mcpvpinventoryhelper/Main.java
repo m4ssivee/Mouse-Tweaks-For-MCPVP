@@ -70,14 +70,14 @@ public class Main {
 
             handler = findHandler(openScreen);
             if (handler == null) {
-                Logger.DebugLog("No valid handler found; Mouse Tweaks is disabled.");
+                Logger.DebugLog("No valid handler found; Mouse Tweaks For MCPVP is disabled.");
             } else {
                 boolean disableForThisContainer = handler.isMouseTweaksDisabled();
                 disableWheelForThisContainer = handler.isWheelTweakDisabled();
 
                 Logger.DebugLog("Handler: "
                         + handler.getClass().getSimpleName()
-                        + "; Mouse Tweaks is "
+                        + "; Mouse Tweaks For MCPVP is "
                         + (disableForThisContainer ? "disabled" : "enabled")
                         + "; wheel tweak is "
                         + (disableWheelForThisContainer ? "disabled" : "enabled")
