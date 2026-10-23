@@ -1,13 +1,13 @@
-package com.m4ssivee.mousetweaksmcpvp.handlers;
+package com.m4ssivee.mcpvpinventoryhelper.handlers;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.world.inventory.*;
-import com.m4ssivee.mousetweaksmcpvp.IGuiScreenHandler;
-import com.m4ssivee.mousetweaksmcpvp.MouseButton;
-import com.m4ssivee.mousetweaksmcpvp.api.MouseTweaksDisableWheelTweak;
-import com.m4ssivee.mousetweaksmcpvp.api.MouseTweaksIgnore;
-import com.m4ssivee.mousetweaksmcpvp.mixin.AbstractContainerScreenAccessor;
+import com.m4ssivee.mcpvpinventoryhelper.IGuiScreenHandler;
+import com.m4ssivee.mcpvpinventoryhelper.MouseButton;
+import com.m4ssivee.mcpvpinventoryhelper.api.MouseTweaksDisableWheelTweak;
+import com.m4ssivee.mcpvpinventoryhelper.api.MouseTweaksIgnore;
+import com.m4ssivee.mcpvpinventoryhelper.mixin.AbstractContainerScreenAccessor;
 
 import java.util.List;
 
@@ -39,15 +39,15 @@ public class GuiContainerHandler implements IGuiScreenHandler {
 
     @Override
     public Slot getSlotUnderMouse(double mouseX, double mouseY) {
-        return screenAccessor.mousetweaksmcpvp$invokeFindSlot(mouseX, mouseY);
+        return screenAccessor.mcpvpinvhelper$invokeFindSlot(mouseX, mouseY);
     }
 
     @Override
     public boolean disableRMBDraggingFunctionality() {
-        screenAccessor.mousetweaksmcpvp$setSkipNextRelease(true);
+        screenAccessor.mcpvpinvhelper$setSkipNextRelease(true);
 
-        if (screenAccessor.mousetweaksmcpvp$getIsQuickCrafting() && screenAccessor.mousetweaksmcpvp$getQuickCraftingButton() == 1) {
-            screenAccessor.mousetweaksmcpvp$setIsQuickCrafting(false);
+        if (screenAccessor.mcpvpinvhelper$getIsQuickCrafting() && screenAccessor.mcpvpinvhelper$getQuickCraftingButton() == 1) {
+            screenAccessor.mcpvpinvhelper$setIsQuickCrafting(false);
             return true;
         }
 
@@ -56,7 +56,7 @@ public class GuiContainerHandler implements IGuiScreenHandler {
 
     @Override
     public void clickSlot(Slot slot, MouseButton mouseButton, boolean shiftPressed) {
-        screenAccessor.mousetweaksmcpvp$invokeSlotClicked(
+        screenAccessor.mcpvpinvhelper$invokeSlotClicked(
                 slot,
                 slot.index,
                 mouseButton.getValue(),

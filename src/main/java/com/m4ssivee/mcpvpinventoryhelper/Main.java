@@ -1,4 +1,4 @@
-package com.m4ssivee.mousetweaksmcpvp;
+package com.m4ssivee.mcpvpinventoryhelper;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.Minecraft;
@@ -9,10 +9,10 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.BundleItem;
 import net.minecraft.world.item.ItemStack;
 import org.lwjgl.glfw.GLFW;
-import com.m4ssivee.mousetweaksmcpvp.api.IMTModGuiContainer3Ex;
-import com.m4ssivee.mousetweaksmcpvp.handlers.GuiContainerCreativeHandler;
-import com.m4ssivee.mousetweaksmcpvp.handlers.GuiContainerHandler;
-import com.m4ssivee.mousetweaksmcpvp.handlers.IMTModGuiContainer3ExHandler;
+import com.m4ssivee.mcpvpinventoryhelper.api.IMTModGuiContainer3Ex;
+import com.m4ssivee.mcpvpinventoryhelper.handlers.GuiContainerCreativeHandler;
+import com.m4ssivee.mcpvpinventoryhelper.handlers.GuiContainerHandler;
+import com.m4ssivee.mcpvpinventoryhelper.handlers.IMTModGuiContainer3ExHandler;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class Main {
 
         mc = Minecraft.getInstance();
 
-        config = new Config(mc.gameDirectory.getAbsolutePath() + File.separator + "config" + File.separator + "MouseTweaksForMCPVP.cfg");
+        config = new Config(mc.gameDirectory.getAbsolutePath() + File.separator + "config" + File.separator + "McpvpInventoryHelper.cfg");
         config.read();
 
         Logger.Log("Initialized.");
@@ -70,14 +70,14 @@ public class Main {
 
             handler = findHandler(openScreen);
             if (handler == null) {
-                Logger.DebugLog("No valid handler found; Mouse Tweaks is disabled.");
+                Logger.DebugLog("No valid handler found; Inventory Helper is disabled.");
             } else {
                 boolean disableForThisContainer = handler.isMouseTweaksDisabled();
                 disableWheelForThisContainer = handler.isWheelTweakDisabled();
 
                 Logger.DebugLog("Handler: "
                         + handler.getClass().getSimpleName()
-                        + "; Mouse Tweaks is "
+                        + "; Inventory Helper is "
                         + (disableForThisContainer ? "disabled" : "enabled")
                         + "; wheel tweak is "
                         + (disableWheelForThisContainer ? "disabled" : "enabled")

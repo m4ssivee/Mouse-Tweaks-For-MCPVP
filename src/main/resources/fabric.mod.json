@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "mousetweaks_for_mcpvp",
+  "id": "mcpvp_inventory_helper",
   "version": "${version}",
-  "name": "Mouse Tweaks For MCPVP",
-  "description": "A Mouse Tweaks variant made to work on the MCPVP server. Based on Mouse Tweaks by Ivan Molodetskikh (YaLTeR).",
+  "name": "MCPVP Inventory Helper",
+  "description": "Inventory mouse shortcuts for the MCPVP server. Based on Mouse Tweaks by Ivan Molodetskikh (YaLTeR).",
   "authors": [
     "m4ssivee"
   ],
@@ -25,15 +25,15 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "com.m4ssivee.mousetweaksmcpvp.fabric.MouseTweaksForMCPVPFabric"
+      "com.m4ssivee.mcpvpinventoryhelper.fabric.McpvpInventoryHelperFabric"
     ],
     "modmenu": [
-      "com.m4ssivee.mousetweaksmcpvp.ModMenuApiImpl"
+      "com.m4ssivee.mcpvpinventoryhelper.ModMenuApiImpl"
     ]
   },
   "mixins": [
-    "mousetweaks_mcpvp.mixins.json",
-    "mousetweaks_mcpvp-fabric.mixins.json"
+    "mcpvp_inventory_helper.mixins.json",
+    "mcpvp_inventory_helper-fabric.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${fabricLoaderVersion}",

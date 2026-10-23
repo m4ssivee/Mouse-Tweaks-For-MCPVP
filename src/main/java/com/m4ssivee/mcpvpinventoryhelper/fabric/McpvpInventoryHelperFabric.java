@@ -1,12 +1,12 @@
-package com.m4ssivee.mousetweaksmcpvp.fabric;
+package com.m4ssivee.mcpvpinventoryhelper.fabric;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenMouseEvents;
-import com.m4ssivee.mousetweaksmcpvp.Main;
-import com.m4ssivee.mousetweaksmcpvp.MouseButton;
+import com.m4ssivee.mcpvpinventoryhelper.Main;
+import com.m4ssivee.mcpvpinventoryhelper.MouseButton;
 
-public class MouseTweaksForMCPVPFabric implements ClientModInitializer {
+public class McpvpInventoryHelperFabric implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         Main.initialize();

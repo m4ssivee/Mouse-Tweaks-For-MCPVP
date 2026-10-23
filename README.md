@@ -1,6 +1,6 @@
-# Mouse Tweaks For MCPVP
+# MCPVP Inventory Helper
 
-A Fabric mod that brings Mouse Tweaks-style inventory handling to the **MCPVP** server.
+A Fabric mod that brings fast inventory mouse shortcuts to the **MCPVP** server.
 
 ## Credits
 

@@ -1,4 +1,4 @@
-package com.m4ssivee.mousetweaksmcpvp;
+package com.m4ssivee.mcpvpinventoryhelper;
 
 public enum WheelScrollDirection {
     NORMAL(0), INVERTED(1), INVENTORY_POSITION_AWARE(2), INVENTORY_POSITION_AWARE_INVERTED(3);

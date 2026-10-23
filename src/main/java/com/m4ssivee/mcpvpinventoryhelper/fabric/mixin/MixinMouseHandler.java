@@ -1,4 +1,4 @@
-package com.m4ssivee.mousetweaksmcpvp.fabric.mixin;
+package com.m4ssivee.mcpvpinventoryhelper.fabric.mixin;
 
 import net.minecraft.client.MouseHandler;
 import net.minecraft.client.gui.screens.Screen;
@@ -8,8 +8,8 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import com.m4ssivee.mousetweaksmcpvp.Main;
-import com.m4ssivee.mousetweaksmcpvp.MouseButton;
+import com.m4ssivee.mcpvpinventoryhelper.Main;
+import com.m4ssivee.mcpvpinventoryhelper.MouseButton;
 
 @Mixin(MouseHandler.class)
 public abstract class MixinMouseHandler {

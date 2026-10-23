@@ -1,4 +1,4 @@
-package com.m4ssivee.mousetweaksmcpvp;
+package com.m4ssivee.mcpvpinventoryhelper;
 
 public enum ScrollItemScaling {
     PROPORTIONAL(0), ALWAYS_ONE(1);

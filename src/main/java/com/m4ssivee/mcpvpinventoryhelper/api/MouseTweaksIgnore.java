@@ -1,4 +1,4 @@
-package com.m4ssivee.mousetweaksmcpvp.api;
+package com.m4ssivee.mcpvpinventoryhelper.api;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

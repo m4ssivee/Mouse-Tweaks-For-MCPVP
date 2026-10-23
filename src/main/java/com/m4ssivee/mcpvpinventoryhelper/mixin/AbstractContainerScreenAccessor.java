@@ -1,4 +1,4 @@
-package com.m4ssivee.mousetweaksmcpvp.mixin;
+package com.m4ssivee.mcpvpinventoryhelper.mixin;
 
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.world.inventory.ClickType;
@@ -10,20 +10,20 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 @Mixin(AbstractContainerScreen.class)
 public interface AbstractContainerScreenAccessor {
     @Invoker("findSlot")
-    Slot mousetweaksmcpvp$invokeFindSlot(double x, double y);
+    Slot mcpvpinvhelper$invokeFindSlot(double x, double y);
 
     @Invoker("slotClicked")
-    void mousetweaksmcpvp$invokeSlotClicked(Slot slot, int index, int button, ClickType clickType);
+    void mcpvpinvhelper$invokeSlotClicked(Slot slot, int index, int button, ClickType clickType);
 
     @Accessor("isQuickCrafting")
-    boolean mousetweaksmcpvp$getIsQuickCrafting();
+    boolean mcpvpinvhelper$getIsQuickCrafting();
 
     @Accessor("isQuickCrafting")
-    void mousetweaksmcpvp$setIsQuickCrafting(boolean value);
+    void mcpvpinvhelper$setIsQuickCrafting(boolean value);
 
     @Accessor("quickCraftingButton")
-    int mousetweaksmcpvp$getQuickCraftingButton();
+    int mcpvpinvhelper$getQuickCraftingButton();
 
     @Accessor("skipNextRelease")
-    void mousetweaksmcpvp$setSkipNextRelease(boolean value);
+    void mcpvpinvhelper$setSkipNextRelease(boolean value);
 }

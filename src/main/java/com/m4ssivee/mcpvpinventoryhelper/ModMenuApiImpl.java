@@ -1,4 +1,4 @@
-package com.m4ssivee.mousetweaksmcpvp;
+package com.m4ssivee.mcpvpinventoryhelper;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;

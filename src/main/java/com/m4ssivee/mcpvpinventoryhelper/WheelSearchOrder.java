@@ -1,4 +1,4 @@
-package com.m4ssivee.mousetweaksmcpvp;
+package com.m4ssivee.mcpvpinventoryhelper;
 
 public enum WheelSearchOrder {
     FIRST_TO_LAST(0), LAST_TO_FIRST(1);

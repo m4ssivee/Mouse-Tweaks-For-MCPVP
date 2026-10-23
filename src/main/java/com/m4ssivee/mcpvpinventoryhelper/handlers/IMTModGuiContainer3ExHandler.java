@@ -1,10 +1,10 @@
-package com.m4ssivee.mousetweaksmcpvp.handlers;
+package com.m4ssivee.mcpvpinventoryhelper.handlers;
 
 import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
-import com.m4ssivee.mousetweaksmcpvp.IGuiScreenHandler;
-import com.m4ssivee.mousetweaksmcpvp.MouseButton;
-import com.m4ssivee.mousetweaksmcpvp.api.IMTModGuiContainer3Ex;
+import com.m4ssivee.mcpvpinventoryhelper.IGuiScreenHandler;
+import com.m4ssivee.mcpvpinventoryhelper.MouseButton;
+import com.m4ssivee.mcpvpinventoryhelper.api.IMTModGuiContainer3Ex;
 
 import java.util.List;
 

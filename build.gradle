@@ -3,8 +3,8 @@ plugins {
 }
 
 version = project.modVersion
-group = "com.m4ssivee.mousetweaksmcpvp"
-archivesBaseName = "MouseTweaksForMCPVP-fabric-mc${project.fabricMcVersion}"
+group = "com.m4ssivee.mcpvpinventoryhelper"
+archivesBaseName = "McpvpInventoryHelper-fabric-mc${project.fabricMcVersion}"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(project.modJavaVersion)
 
@@ -17,8 +17,8 @@ repositories {
 sourceSets {
     main {
         java {
-            exclude 'com/m4ssivee/mousetweaksmcpvp/forge'
-            exclude 'com/m4ssivee/mousetweaksmcpvp/neoforge'
+            exclude 'com/m4ssivee/mcpvpinventoryhelper/forge'
+            exclude 'com/m4ssivee/mcpvpinventoryhelper/neoforge'
         }
 
         resources {
@@ -29,7 +29,7 @@ sourceSets {
 }
 
 loom {
-    mixin.defaultRefmapName = 'mousetweaks_mcpvp.mixins.refmap.json'
+    mixin.defaultRefmapName = 'mcpvp_inventory_helper.mixins.refmap.json'
 }
 
 dependencies {

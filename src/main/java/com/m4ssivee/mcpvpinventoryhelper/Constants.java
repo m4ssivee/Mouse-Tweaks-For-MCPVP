@@ -1,7 +1,7 @@
-package com.m4ssivee.mousetweaksmcpvp;
+package com.m4ssivee.mcpvpinventoryhelper;
 
 public class Constants {
-    public static final String MOD_ID = "mousetweaks_for_mcpvp";
+    public static final String MOD_ID = "mcpvp_inventory_helper";
 
     static final String CONFIG_RMB_TWEAK = "RMBTweak";
     static final String CONFIG_LMB_TWEAK_WITH_ITEM = "LMBTweakWithItem";

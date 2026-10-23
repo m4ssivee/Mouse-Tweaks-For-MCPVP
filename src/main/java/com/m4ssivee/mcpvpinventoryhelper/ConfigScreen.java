@@ -1,4 +1,4 @@
-package com.m4ssivee.mousetweaksmcpvp;
+package com.m4ssivee.mcpvpinventoryhelper;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -11,7 +11,7 @@ public class ConfigScreen extends Screen {
     private final Screen previous;
 
     public ConfigScreen(Screen previous) {
-        super(Component.literal("Mouse Tweaks For MCPVP Options"));
+        super(Component.literal("MCPVP Inventory Helper Options"));
         this.previous = previous;
     }
 

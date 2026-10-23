@@ -1,4 +1,4 @@
-package com.m4ssivee.mousetweaksmcpvp;
+package com.m4ssivee.mcpvpinventoryhelper;
 
 public enum ScrollHandling {
     SIMPLE(0), EVENT_BASED(1);

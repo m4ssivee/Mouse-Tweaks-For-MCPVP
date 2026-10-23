@@ -1,4 +1,4 @@
-package com.m4ssivee.mousetweaksmcpvp.api;
+package com.m4ssivee.mcpvpinventoryhelper.api;
 
 import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;

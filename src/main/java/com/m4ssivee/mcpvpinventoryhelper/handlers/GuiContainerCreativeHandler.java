@@ -1,4 +1,4 @@
-package com.m4ssivee.mousetweaksmcpvp.handlers;
+package com.m4ssivee.mcpvpinventoryhelper.handlers;
 
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraft.world.inventory.Slot;
