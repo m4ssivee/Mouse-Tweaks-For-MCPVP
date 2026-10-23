@@ -22,18 +22,14 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          distribution: adopt
+          distribution: temurin
           java-version: 21
 
-      - name: Build (Forge)
-        run: ./gradlew build
-      - name: Build (NeoForge)
-        run: ./gradlew --build-file build-neoforge.gradle build
       - name: Build (Fabric)
-        run: ./gradlew --build-file build-fabric.gradle build
+        run: ./gradlew build
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MouseTweaks
+          name: McpvpInventoryHelper
           path: build/libs/
           if-no-files-found: error
