@@ -9,8 +9,8 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(AbstractContainerScreen.class)
 public interface AbstractContainerScreenAccessor {
-    @Invoker("findSlot")
-    Slot mcpvpinvhelper$invokeFindSlot(double x, double y);
+    @Invoker("getHoveredSlot")
+    Slot mcpvpinvhelper$invokeGetHoveredSlot(double x, double y);
 
     @Invoker("slotClicked")
     void mcpvpinvhelper$invokeSlotClicked(Slot slot, int index, int button, ClickType clickType);
