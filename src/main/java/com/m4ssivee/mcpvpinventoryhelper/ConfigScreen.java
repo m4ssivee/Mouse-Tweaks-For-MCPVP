@@ -1,8 +1,8 @@
 package com.m4ssivee.mcpvpinventoryhelper;
 
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.CycleButton;
+import net.minecraft.client.gui.components.StringWidget;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
@@ -18,6 +18,8 @@ public class ConfigScreen extends Screen {
     @Override
     protected void init() {
         Main.config.read();
+
+        this.addRenderableWidget(new StringWidget(this.width / 2 - this.font.width(this.title) / 2, 15, this.width, 9, this.title, this.font));
 
         this.addRenderableWidget(CycleButton.onOffBuilder(Main.config.rmbTweak)
                 .create(this.width / 2 - 155, this.height / 6, 150, 20,
@@ -39,9 +41,8 @@ public class ConfigScreen extends Screen {
                 CycleButton.builder((WheelSearchOrder value) -> Component.literal(switch (value) {
                             case FIRST_TO_LAST -> "First to Last";
                             case LAST_TO_FIRST -> "Last to First";
-                        }))
+                        }), Main.config.wheelSearchOrder)
                         .withValues(WheelSearchOrder.FIRST_TO_LAST, WheelSearchOrder.LAST_TO_FIRST)
-                        .withInitialValue(Main.config.wheelSearchOrder)
                         .create(this.width / 2 - 155, this.height / 6 + 24 * 2, 310, 20,
                                 Component.literal("Wheel Tweak Search Order"), (button, value) -> Main.config.wheelSearchOrder = value));
 
@@ -51,9 +52,8 @@ public class ConfigScreen extends Screen {
                             case INVERTED -> "Up to Push, Down to Pull";
                             case INVENTORY_POSITION_AWARE -> "Inventory Position Aware";
                             case INVENTORY_POSITION_AWARE_INVERTED -> "Inventory Position Aware, Inverted";
-                        }))
+                        }), Main.config.wheelScrollDirection)
                         .withValues(WheelScrollDirection.NORMAL, WheelScrollDirection.INVERTED, WheelScrollDirection.INVENTORY_POSITION_AWARE, WheelScrollDirection.INVENTORY_POSITION_AWARE_INVERTED)
-                        .withInitialValue(Main.config.wheelScrollDirection)
                         .create(this.width / 2 - 155, this.height / 6 + 24 * 3, 310, 20,
                                 Component.literal("Scroll Direction"), (button, value) -> Main.config.wheelScrollDirection = value));
 
@@ -61,9 +61,8 @@ public class ConfigScreen extends Screen {
                 CycleButton.builder((ScrollItemScaling value) -> Component.literal(switch (value) {
                             case PROPORTIONAL -> "Multiple Wheel Clicks Move Multiple Items";
                             case ALWAYS_ONE -> "Always Move One Item (macOS Compatibility)";
-                        }))
+                        }), Main.config.scrollItemScaling)
                         .withValues(ScrollItemScaling.PROPORTIONAL, ScrollItemScaling.ALWAYS_ONE)
-                        .withInitialValue(Main.config.scrollItemScaling)
                         .create(this.width / 2 - 155, this.height / 6 + 24 * 4, 310, 20,
                                 Component.literal("Scroll Scaling"), (button, value) -> Main.config.scrollItemScaling = value));
 
@@ -78,13 +77,6 @@ public class ConfigScreen extends Screen {
     @Override
     public void onClose() {
         this.minecraft.setScreen(previous);
-    }
-
-    @Override
-    public void render(GuiGraphics guiGraphics, int i, int j, float f) {
-        this.renderBackground(guiGraphics, i, j, f);
-        guiGraphics.drawCenteredString(this.font, this.title, this.width / 2, 15, 0xFFFFFF);
-        super.render(guiGraphics, i, j, f);
     }
 
     @Override
