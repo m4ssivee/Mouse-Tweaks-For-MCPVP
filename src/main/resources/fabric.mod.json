@@ -36,9 +36,9 @@
     "mcpvp_inventory_helper-fabric.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${fabricLoaderVersion}",
+    "fabricloader": ">=0.15.11",
     "fabric-api": "*",
-    "minecraft": "1.21",
+    "minecraft": "1.21.6",
     "java": ">=${modJavaVersion}"
   },
   "suggests": {}
